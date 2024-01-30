@@ -4,6 +4,7 @@
 namespace finances::utils::types
 {
    using ID = int;
+   using BigDecimal = double;
 }
 
 #endif
