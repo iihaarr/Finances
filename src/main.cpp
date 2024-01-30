@@ -1,11 +1,11 @@
-#include "finances/storage/category_interface.hpp"
-#include <iostream>
-int main()
+#include <QApplication>
+#include <QQmlApplicationEngine>
+#include <QDirIterator>
+#include <QDebug>
+int main(int argc, char** argv)
 {
-   auto& st = finances::storage::GetCategoryStorage();
-   auto id = st.Create("new category");
-   auto cat = st.GetById(id);
-   if (cat)
-      std::cout << cat->GetName() << '\n';
-   return 0;
+   QApplication app(argc, argv);
+   QQmlApplicationEngine engine;
+   engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+   return app.exec();
 }
