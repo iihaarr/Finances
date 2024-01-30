@@ -10,7 +10,8 @@ namespace finances::entities
    struct IAccount
    {
       virtual finances::utils::types::ID GetID() const noexcept = 0;
-      virtual std::string GetName() const noexcept = 0;
+      virtual const std::string& GetName() const noexcept = 0;
+      virtual std::unique_ptr<IAccount> Clone() const noexcept = 0;
       virtual ~IAccount() = default;
    };
 }
