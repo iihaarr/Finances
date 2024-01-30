@@ -12,4 +12,10 @@ namespace finances::storage
                                         [id_](const auto& account_) {return account_->GetID() == id_; });
       return accIter != std::end(m_storage) ? (*accIter)->Clone() : nullptr;
    }
+   utils::types::ID AccountStorage::CreateAccount(const std::string& name_) noexcept
+   {
+      static utils::types::ID lastIdx{};
+      m_storage.emplace_back(lastIdx++, name_);
+      return lastIdx;
+   }
 }
