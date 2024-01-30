@@ -7,7 +7,7 @@ namespace finances::storage
 {
    struct IOperationStorage
    {
-      virtual std::unique_ptr<entities::IOperation> GetOperationById(utils::types::ID id_) const noexcept = 0;
+      virtual std::unique_ptr<entities::IOperation> GetById(utils::types::ID id_) const noexcept = 0;
       virtual ~IOperationStorage() = default;
    };
 }

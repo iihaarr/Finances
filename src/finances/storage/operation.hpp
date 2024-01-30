@@ -10,7 +10,7 @@ namespace finances::storage
    class OperationStorage : public IOperationStorage
    {
    public:
-      std::unique_ptr<entities::IOperation> GetOperationById(utils::types::ID id_) const noexcept override;
+      std::unique_ptr<entities::IOperation> GetById(utils::types::ID id_) const noexcept override;
       virtual ~OperationStorage() = default;
    private:
       std::vector<std::unique_ptr<entities::IOperation>> m_storage;

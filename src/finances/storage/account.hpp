@@ -10,8 +10,8 @@ namespace finances::storage
    class AccountStorage : public IAccountStorage
    {
    public:
-      std::unique_ptr<entities::IAccount> GetAccountById(utils::types::ID id_) const noexcept override;
-      utils::types::ID  CreateAccount(const std::string& name_) noexcept override;
+      std::unique_ptr<entities::IAccount> GetById(utils::types::ID id_) const noexcept override;
+      utils::types::ID  Create(const std::string& name_) noexcept override;
       virtual ~AccountStorage() = default;
    private:
       std::vector<std::unique_ptr<entities::IAccount>> m_storage;
