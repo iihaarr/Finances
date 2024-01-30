@@ -11,6 +11,7 @@ namespace finances::storage
    {
    public:
       std::unique_ptr<entities::ICategory> GetCategoryById(utils::types::ID id_) const noexcept override;
+      utils::types::ID CreateCategory(const std::string& name_)  noexcept override;
       virtual ~CategoryStorage() = default;
    private:
       std::vector<std::unique_ptr<entities::ICategory>> m_storage;
