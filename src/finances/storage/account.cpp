@@ -6,6 +6,11 @@
 
 namespace finances::storage
 {
+   IAccountStorage& GetAccountStorage()
+   {
+      static AccountStorage st;
+      return st;
+   }
    std::unique_ptr<entities::IAccount> AccountStorage::GetAccountById(utils::types::ID id_) const noexcept
    {
       const auto accIter = std::find_if(std::begin(m_storage), std::end(m_storage),
@@ -15,7 +20,7 @@ namespace finances::storage
    utils::types::ID AccountStorage::CreateAccount(const std::string& name_) noexcept
    {
       static utils::types::ID lastIdx{};
-      m_storage.emplace_back(lastIdx++, name_);
-      return lastIdx;
+      m_storage.emplace_back(std::make_unique<entities::Account>(lastIdx, name_));
+      return lastIdx++;
    }
 }

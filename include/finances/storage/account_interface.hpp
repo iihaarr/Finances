@@ -11,6 +11,8 @@ namespace finances::storage
       virtual utils::types::ID CreateAccount(const std::string& name_) noexcept = 0;
       virtual ~IAccountStorage() = default;
    };
+
+   IAccountStorage& GetAccountStorage();
 }
 
 #endif
