@@ -8,6 +8,11 @@ namespace finances::entities
    struct Operation : public  IOperation
    {
       Operation(utils::types::ID id_, utils::types::BigDecimal cost_, OperationType type_);
+      Operation(const Operation&) = default;
+      Operation(Operation&&) = default;
+      Operation& operator=(const Operation&) = default;
+      Operation& operator=(Operation&&) = default;
+
       finances::utils::types::ID GetID() const noexcept;
       utils::types::BigDecimal GetCost() const noexcept override;
       OperationType GetType() const noexcept override;
