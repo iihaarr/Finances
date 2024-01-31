@@ -31,19 +31,17 @@ include_directories(${Qt5Widgets_INCLUDE_DIRS} ${QtQml_INCLUDE_DIRS} ${Qt5Gui_IN
 add_definitions(${Qt5Widgets_DEFINITIONS} ${QtQml_DEFINITIONS} ${Qt5Gui_DEFINITIONS})
 qt5_add_resources(QT_RESOURCES ui/qml.qrc)
 
-if (MSVC)
-	source_group("Header Files\\Public\\Entities" FILES ${PUBLIC_ENTITIES_HEADERS})
-	source_group("Header Files\\Public\\Utils" FILES ${PUBLIC_UTILS_HEADERS})
-	source_group("Header Files\\Public\\Storage" FILES ${PUBLIC_STORAGE_HEADERS})
+source_group("Header Files\\Public\\Entities" FILES ${PUBLIC_ENTITIES_HEADERS})
+source_group("Header Files\\Public\\Utils" FILES ${PUBLIC_UTILS_HEADERS})
+source_group("Header Files\\Public\\Storage" FILES ${PUBLIC_STORAGE_HEADERS})
 
-	source_group("Header Files\\Entities" FILES ${PRIVATE_ENTITIES_HEADERS})
-	source_group("Header Files\\Storage" FILES ${PRIVATE_STORAGE_HEADERS})
+source_group("Header Files\\Entities" FILES ${PRIVATE_ENTITIES_HEADERS})
+source_group("Header Files\\Storage" FILES ${PRIVATE_STORAGE_HEADERS})
 	
-	source_group("Source Files\\Storage" FILES ${SOURCE_STORAGE})
-	source_group("Source Files\\Entities" FILES ${SOURCE_ENTITIES})
+source_group("Source Files\\Storage" FILES ${SOURCE_STORAGE})
+source_group("Source Files\\Entities" FILES ${SOURCE_ENTITIES})
 	
-	source_group("Resources Files" FILES ${UI_FILES})
-endif()
+source_group("Resources Files" FILES ${UI_FILES})
 
 add_executable(${PROJECT_NAME} 
 #HEADERS

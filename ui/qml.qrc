@@ -1,5 +1,6 @@
 <RCC>
-	<qresource prefix="/">
-		<file>main.qml</file>
-	</qresource>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>CategoryCost.qml</file>
+    </qresource>
 </RCC>

@@ -1,8 +1,6 @@
-import QtQuick 2.10
-import QtQuick.Window 2.10
-import  QtQuick.Controls 1.4
-import QtQuick.Layouts 1.3
-import QtQuick.Controls.Styles 1.4
+import QtQuick 2.5
+import QtQuick.Window 2.5
+import QtQuick.Layouts 1.11
 
 Window {
     visible: true
@@ -10,30 +8,31 @@ Window {
     height: 480
     title: qsTr("Hello World")
 
-    TabView {
-         id: frame
-         anchors.fill: parent
-         anchors.margins: 4
-         Tab { title: "Tab 1" }
-         Tab { title: "Tab 2" }
-         Tab { title: "Tab 3" }
+    Column {
+        spacing: 5
+        width: parent.width
+        height: parent.height
 
-         style: TabViewStyle {
-             frameOverlap: 1
-             tab: Rectangle {
-                 color: styleData.selected ? "steelblue" :"lightsteelblue"
-                 border.color:  "steelblue"
-                 implicitWidth: Math.max(text.width + 4, 80)
-                 implicitHeight: 20
-                 radius: 2
-                 Text {
-                     id: text
-                     anchors.centerIn: parent
-                     text: styleData.title
-                     color: styleData.selected ? "white" : "black"
-                 }
-             }
-             frame: Rectangle { color: "steelblue" }
-         }
-     }
+        CategoryCost {
+            width: parent.width
+            height: 50
+            name: qsTr("Продукты")
+            cost: qsTr("10 397 Р")
+            percent: qsTr("23%")
+        }
+        CategoryCost {
+            width: parent.width
+            height: 50
+            name: qsTr("Продукты")
+            cost: qsTr("10 397 Р")
+            percent: qsTr("23%")
+        }
+        CategoryCost {
+            width: parent.width
+            height: 50
+            name: qsTr("Продукты")
+            cost: qsTr("10 397 Р")
+            percent: qsTr("23%")
+        }
+    }
 }
