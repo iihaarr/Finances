@@ -19,10 +19,12 @@ file(GLOB_RECURSE PUBLIC_STORAGE_HEADERS ./include/finances/storage/*.hpp)
 #PRIVATE_HEADERS
 file(GLOB_RECURSE PRIVATE_ENTITIES_HEADERS ./src/finances/entities/*.hpp)
 file(GLOB_RECURSE PRIVATE_STORAGE_HEADERS ./src/finances/storage/*.hpp)
+file(GLOB_RECURSE PRIVATE_MODELS_HEADERS ./src/finances/models/*.hpp)
 
 #SOURCE FILES
 file(GLOB_RECURSE SOURCE_STORAGE ./src/finances/storage/*.cpp)
 file(GLOB_RECURSE SOURCE_ENTITIES ./src/finances/entities/*.cpp)
+file(GLOB_RECURSE SOURCE_MODELS ./src/finances/models/*.cpp)
 
 #UI QML
 file(GLOB_RECURSE UI_FILES ./ui/*.qml)
@@ -37,9 +39,11 @@ source_group("Header Files\\Public\\Storage" FILES ${PUBLIC_STORAGE_HEADERS})
 
 source_group("Header Files\\Entities" FILES ${PRIVATE_ENTITIES_HEADERS})
 source_group("Header Files\\Storage" FILES ${PRIVATE_STORAGE_HEADERS})
+source_group("Header Files\\Models" FILES ${PRIVATE_MODELS_HEADERS})
 	
 source_group("Source Files\\Storage" FILES ${SOURCE_STORAGE})
 source_group("Source Files\\Entities" FILES ${SOURCE_ENTITIES})
+source_group("Source Files\\Models" FILES ${SOURCE_MODELS})
 	
 source_group("Resources Files" FILES ${UI_FILES})
 
@@ -50,9 +54,11 @@ ${PUBLIC_UTILS_HEADERS}
 ${PRIVATE_ENTITIES_HEADERS} 
 ${PUBLIC_STORAGE_HEADERS}
 ${PRIVATE_STORAGE_HEADERS}
+${PRIVATE_MODELS_HEADERS}
 #SOURCES
 ${SOURCE_STORAGE} 
 ${SOURCE_ENTITIES}
+${SOURCE_MODELS}
 ./src/main.cpp
 #UI
 ${UI_FILES}

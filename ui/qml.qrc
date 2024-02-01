@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>CategoryCost.qml</file>
+        <file>CategoryCostElement.qml</file>
+        <file>CategoryCostList.qml</file>
     </qresource>
 </RCC>
